@@ -1,0 +1,26 @@
+[datetime]
+command=./scripts/datetime.sh
+interval=60
+
+[brightness]
+command=./scripts/brightness.sh
+interval=once
+markup=pango
+signal=11
+
+[wifi]
+command=./scripts/wifi.sh
+interval=5
+markup=pango
+
+[audio]
+command=./scripts/GoAudio
+interval=60
+markup=pango
+signal=10
+
+[battery]
+command=python ./scripts/battery.py
+markup=pango
+interval=5
+

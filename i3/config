@@ -1,0 +1,37 @@
+# Mod1 = ALT
+set $mod Mod1
+
+include $HOME/.config/i3/media-keys.conf
+include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/windows.conf
+include $HOME/.config/i3/bar.conf
+
+# Appearance
+font pango:DejaVu Sans Mono 9
+default_border pixel 1
+gaps inner 8
+gaps outer 0
+
+# Configuration file
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit shortcut pressed! Do you want to exit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Auto Start
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom
+
+# Launch programs
+bindsym $mod+Return exec urxvt
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+bindsym $mod+o mode "$mode_launcher"
+mode "$mode_launcher"{
+    bindsym b exec brave
+    bindsym s exec spotify-launcher
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym $mod+o mode "default"
+}

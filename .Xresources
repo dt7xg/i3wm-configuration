@@ -1,0 +1,5 @@
+#include ".Xresources.d/colors"
+#include ".Xresources.d/urxvt"
+
+!! Font
+*.font: xft:JetBrains Mono:size=13
